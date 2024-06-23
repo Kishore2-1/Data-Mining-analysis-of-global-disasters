@@ -1,2 +1,2 @@
-# Data-Mining-analysis-of-global-disasters
+# Data-Mining-Analysis-of-Global-Disasters
 # Explain
