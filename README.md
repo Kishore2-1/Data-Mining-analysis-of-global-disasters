@@ -57,4 +57,63 @@ This database is utilized to analyze the impact of different types of disasters 
   - Plots a scatter plot of `x` against `y` and overlays a regression line (`abline`) on the plot. This shows the relationship between two catogories with a fitted linear model.
   - Base R functions (`plot()` and `abline()`) are used to create a scatter plot and overlay a regression line (`model`) to demonstrate the relationship between infrastructure and damages in roads.
 
+## Data Analysis Methods
+
+This analysis leverages several advanced statistical and machine learning methods to understand and predict patterns in the dataset. The following sections explain the usage of each method:
+
+### Linear Regression
+
+Linear regression is used to model the relationship between a dependent variable and one independent variable. 
+
+In this analysis:
+- Purpose: To understand how `Losses_USD` (economic losses) affects the number of `Injured` individuals.
+- Implementation: The simple linear regression model was fit using `lm(y ~ x, data = data)` where `x` is `Losses_USD` and `y` is `Injured`.
+- Visualization: The relationship was visualized with a scatter plot and a regression line.
+
+### Multi-Linear Regression
+
+Multi-linear regression extends linear regression by modeling the relationship between a dependent variable and multiple independent variables.
+
+- Purpose: To predict `Deaths` and `Losses_USD` using principal components derived from PCA.
+- Implementation: The model was built using `lm(Deaths ~ PC1 + PC2 + PC3, data = train_data)` and similarly for `Losses_USD`.
+- Evaluation: The model's performance was assessed using Root Mean Squared Error (RMSE).
+
+### XGBoost
+
+XGBoost is a powerful machine learning algorithm based on gradient boosting. 
+
+In this analysis:
+- Purpose: To improve prediction accuracy for `Deaths` and `Losses_USD`.
+- Implementation: The model was trained using the `xgb.train` function with specified parameters such as learning rate, max depth, and number of rounds.
+- Evaluation: RMSE and R-squared values were calculated to evaluate model performance.
+
+### Random Forest
+
+Random Forest is an ensemble learning method that operates by constructing multiple decision trees. Although not explicitly used in the final provided code, it was mentioned for imputation of missing values:
+
+- Purpose: To handle missing values in the dataset effectively.
+- Implementation: The `missForest` package was used to perform imputation, improving the dataset's completeness for further analysis.
+
+### Principal Component Analysis (PCA)
+
+PCA is a dimensionality reduction technique that transforms a large set of variables into a smaller one while retaining most of the variance in the data.
+
+In this analysis:
+- Purpose: To reduce the dimensionality of the dataset and identify the most significant components.
+- Implementation: The `prcomp` function was used to compute principal components.
+- Result: The first three principal components were retained for subsequent modeling.
+
+### Classification
+
+While the provided code primarily focuses on regression and dimensionality reduction, classification could be integrated to categorize events or predict categorical outcomes. This could involve using algorithms like logistic regression, decision trees, or SVM, depending on the target variable.
+
+### Correlation
+
+Correlation analysis helps identify relationships between variables.
+
+- Purpose: To explore the interdependencies between various numerical variables in the dataset.
+- Implementation: The correlation matrix was computed and visualized using `corrplot` to identify significant correlations.
+- Insight: This analysis informs the selection of variables for further modeling.
+
+
 
