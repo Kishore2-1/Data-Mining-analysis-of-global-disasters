@@ -34,8 +34,8 @@ This database is utilized to analyze the impact of different types of disasters 
 
 ### Data Visualization Techniques Used:
 
-1. Bar Plot (Grouped and Stacked)
-   - Grouped Bar Plot: Visualizes counts of deaths, missing persons, and injured individuals across different events using `ggplot2`. Each event category (`Event_Comb`) has bars grouped by these variables (`Deaths`, `Missing`, `Injured`).
+1. Bar Plot (Grouped and Stacked):
+  - Grouped Bar Plot: Visualizes counts of deaths, missing persons, and injured individuals across different events using `ggplot2`. Each event category (`Event_Comb`) has bars grouped by these variables (`Deaths`, `Missing`, `Injured`).
   - Shows how `ggplot2` is used to create a grouped bar plot (`geom_bar(stat = "identity", position = "dodge")`).
   - Data is transformed into long format using `gather` from `tidyr` for plotting multiple variables (`Deaths`, `Missing`, `Injured`) against each event (`Event_Comb`).
    - Stacked Bar Plot: Displays the total number of events grouped by decade (`Decade`), showing a stacked bar where each segment represents the count of events in that decade.
@@ -43,18 +43,18 @@ This database is utilized to analyze the impact of different types of disasters 
   - Decade information (`Decade`) is derived from the `Year` column, and totals are calculated using `dplyr` (`group_by` and `summarise`).
 
 2. Pie Chart:
-   - Represents the percentage distribution of infrastructure damage across different event categories (`Event_Comb`). Each category (`Climate-related`, `Natural Disasters`, etc.) is represented by a segment of the pie chart, colored using custom colors.
+  - Represents the percentage distribution of infrastructure damage across different event categories (`Event_Comb`). Each category (`Climate-related`, `Natural Disasters`, etc.) is represented by a segment of the pie chart, colored using custom colors.
   - Calculates sums and percentages of infrastructure damage across different event categories (`Event_Comb`).
   - `pie()` function in base R is used to create the pie chart with custom colors (`custom_colors`).
 
 3. Bar Plot (Accuracy Comparison):
-   - For Country Classification: Compares accuracy (%) of different classification methods (`K-Means`, `Random Forest`, `XGBoost`) using a grouped bar plot.
-   - For Event Classification: Compares accuracy (%) of different classification methods (`K-Means`, `Random Forest`, `XGBoost`) for `Event_Comb` using another grouped bar plot.
+  - For Country Classification: Compares accuracy (%) of different classification methods (`K-Means`, `Random Forest`, `XGBoost`) using a grouped bar plot.
+  - For Event Classification: Compares accuracy (%) of different classification methods (`K-Means`, `Random Forest`, `XGBoost`) for `Event_Comb` using another grouped bar plot.
   - Compares accuracy metrics for different classification methods (`K-Means`, `Random Forest`, `XGBoost`) for both country and event classification tasks.
   - `ggplot2` is used to visualize the accuracy metrics (`geom_bar(stat = "identity", position = "dodge")`), and custom colors are set for clarity.
 
 4. Scatter Plot with Regression Line:
-   - Plots a scatter plot of `x` against `y` and overlays a regression line (`abline`) on the plot. This shows the relationship between two catogories with a fitted linear model.
-   - Base R functions (`plot()` and `abline()`) are used to create a scatter plot and overlay a regression line (`model`) to demonstrate the relationship between infrastructure and damages in roads.
+  - Plots a scatter plot of `x` against `y` and overlays a regression line (`abline`) on the plot. This shows the relationship between two catogories with a fitted linear model.
+  - Base R functions (`plot()` and `abline()`) are used to create a scatter plot and overlay a regression line (`model`) to demonstrate the relationship between infrastructure and damages in roads.
 
 
