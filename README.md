@@ -115,5 +115,59 @@ Correlation analysis helps identify relationships between variables.
 - Implementation: The correlation matrix was computed and visualized using `corrplot` to identify significant correlations.
 - Insight: This analysis informs the selection of variables for further modeling.
 
+## Results and Key Findings
+
+This section highlights the significant findings and insights derived from our analyses, focusing on predictive models, correlations, and patterns identified in the disaster-related dataset.
+
+### Multi-Linear Regression
+
+1. Model to Predict Deaths:
+   - Adjusted R-squared: 0.5035
+   - Insight: The multi-linear regression model explains approximately 50.35% of the variance in the number of deaths. This indicates a moderate level of predictability using the selected principal components.
+
+2. Model to Predict USD Losses:
+   - Adjusted R-squared: 0.7353
+   - Insight: This model accounts for 73.53% of the variance in economic losses (USD). The higher adjusted R-squared value suggests that the selected features are more effective in predicting economic losses than deaths.
+
+### XGBoost
+
+1. Model to Predict Deaths:
+   - R-squared: 0.6623
+   - Insight: The XGBoost model demonstrates improved performance over the multi-linear regression model, explaining 66.23% of the variance in deaths. This highlights the efficacy of XGBoost in capturing complex relationships in the data.
+
+2. Model to Predict USD Losses:
+   - R-squared: 0.8741
+   - Insight: XGBoost significantly outperforms the multi-linear regression model in predicting economic losses, with an R-squared value of 87.41%. This indicates a strong predictive capability, making it a valuable tool for estimating economic impacts of disasters.
+
+### Correlation Analysis
+
+1. Correlation between USD Losses and Injured:
+   - Adjusted R-squared: 0.4374
+   - Insight: The correlation analysis reveals that about 43.74% of the variance in the number of injured individuals can be explained by economic losses (USD). This moderate correlation suggests that as economic losses increase, the number of injuries also tends to rise.
+
+### Classification Models
+
+1. Random Forest:
+   - Event Combination Accuracy: 52.13%
+   - Country Accuracy: 67.91%
+   - Insight: The random forest classifier shows moderate accuracy in predicting event combinations and better performance in classifying events by country. This indicates its potential for categorizing events based on geographical regions.
+
+2. XGBoost:
+   - Country Accuracy: 79.92%
+   - Event Combination Accuracy: 99.12%
+   - Insight: XGBoost demonstrates high accuracy, particularly in classifying event combinations with an impressive 99.12% accuracy. This underscores its robustness and reliability for classification tasks.
+
+3. K-Means Clustering:
+   - Country Accuracy: 6.28%
+   - Event Combination Accuracy: 17.71%
+   - Insight: K-Means clustering shows limited accuracy in both country and event combination classifications. This suggests that clustering may not be as effective as supervised learning methods for this dataset.
+
+## Conclusion
+
+The analysis reveals several key insights into the disaster dataset:
+- Predictive Models: XGBoost models exhibit superior performance in predicting both deaths and economic losses compared to multi-linear regression, highlighting their strength in capturing complex patterns.
+- Correlations: There is a moderate positive correlation between economic losses and the number of injured individuals, indicating that higher economic impacts often coincide with increased injuries.
+- Classification: XGBoost outperforms other classification methods, achieving high accuracy in categorizing event combinations and events by country.
+
 
 
