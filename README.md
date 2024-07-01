@@ -188,6 +188,8 @@ This project represents a comprehensive analysis of global disaster data, focusi
 
 Future research could focus on expanding the dataset to include more countries and disaster types, integrating real-time data for dynamic modeling, and exploring additional machine learning techniques for improved predictive accuracy. Collaborations with local governments and international agencies can further enhance the practical applications of these findings.
 
+## Conclusion
+
 In conclusion, this project underscores the critical role of data-driven approaches in understanding and mitigating the impacts of disasters. By leveraging statistical and machine learning methodologies, we can uncover valuable insights that contribute to more effective disaster risk reduction and management strategies globally.
 
 ---
